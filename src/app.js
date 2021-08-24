@@ -15,6 +15,9 @@ const app = express(); // returns a object with tons of methods
 const indexPath = path.join(__dirname, '../public');
 const partialsPath = path.join(__dirname, '../public/templates/partials');
 const viewsPath = path.join(__dirname,'../public/templates/views');
+const port = proccess.env.PORT || 3000;
+
+
 
 app.use(express.static(indexPath));
 app.set('view engine', 'hbs');
@@ -99,6 +102,6 @@ app.get('*', (req, res) => {
 
 
 // Start the server
-app.listen(3000, () => {
-    console.log('Server started at port 3000.');
+app.listen(port, () => {
+    console.log('Server started at port ' + port);
 })
