@@ -12,10 +12,12 @@ const forecast = (latitude, longitude, callback) => {
         } else {
             const location = body.location;
             const description = body.current;
+            console.log(description);
             callback(undefined,  {
                 forecast: `The weather is ${description.weather_descriptions[0].toLowerCase()}`,
                 location: `${location.name}, ${location.region +', ' +location.country}`,
-                address: location.name
+                address: location.name,
+                temperature: description.temperature
             });
         }
     });

@@ -80,10 +80,9 @@ app.get('/weather', (req, res) => {
             return res.send(response);
         });
     });
+});
 
 
-
-})
 app.get('/products', (req, res, next) => {
     if (!req.query.search) {
         res.send({error: 'You must provide a searh value and key!'});
