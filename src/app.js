@@ -15,7 +15,7 @@ const app = express(); // returns a object with tons of methods
 const indexPath = path.join(__dirname, '../public');
 const partialsPath = path.join(__dirname, '../public/templates/partials');
 const viewsPath = path.join(__dirname,'../public/templates/views');
-const port = proccess.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 
 
