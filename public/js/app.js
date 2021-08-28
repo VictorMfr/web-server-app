@@ -12,7 +12,7 @@ messageTwo.textContent = '';
 
 
 weatherForm.addEventListener('submit', (eventObject) => {
-    eventObject.preventDefault();
+    eventObject.preventDefault(); // prevents reloading the page
     const location = search.value;
     if (!location) return messageOne.textContent = 'Please provide a location';
     searchLocation(location);

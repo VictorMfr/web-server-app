@@ -18,26 +18,25 @@ const viewsPath = path.join(__dirname,'../public/templates/views');
 const port = process.env.PORT || 3000;
 
 
-
-app.use(express.static(indexPath));
-app.set('view engine', 'hbs');
-app.set('views', viewsPath);
+app.use(express.static(indexPath)); // dir where is served static files (in this case, indexPath)
+app.set('view engine', 'hbs'); // setting a hbs engine
+app.set('views', viewsPath); // setting a views dir (by default, it is in projects root: web-server/)
 hbs.registerPartials(partialsPath);
 
 /// Get commands
-app.get('', (req, res) => {
-    res.render('index',{
+app.get('/', (req, res) => { // What happens if you enter to the url?
+    res.render('index', {
         title:'Weather App!',
         name:'Victor'
     });
 });
 
 app.get('/about', (req, res) => {
-    res.render('about',{
+    res.render('about', {
         title: 'About',
         name: 'Victor'
     });
-})
+});
 
 
 app.get('/help', (req, res) => {
